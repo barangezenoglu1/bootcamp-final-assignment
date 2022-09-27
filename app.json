@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "final-assignment",
+    "slug": "final-assignment",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "final-assignment"
+}
