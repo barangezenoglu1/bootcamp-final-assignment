@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "820911574590",
+    "project_id": "chat-bank",
+    "storage_bucket": "chat-bank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820911574590:android:aa677b570d6fa3eb90cb6f",
+        "android_client_info": {
+          "package_name": "com.finalassignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820911574590-68jpo7amn4codp7vql33aql9q81e65e1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOsLoyIJ2ZS8o3wwp-HaA4JXWwlariHss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820911574590-68jpo7amn4codp7vql33aql9q81e65e1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
