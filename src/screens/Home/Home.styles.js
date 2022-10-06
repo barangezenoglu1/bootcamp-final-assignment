@@ -6,6 +6,7 @@ export default StyleSheet.create({
     return {
       position: "relative",
       height: windowHeight,  
+      backgroundColor: mode.white
     };
   },
   darkModeIcon: {
