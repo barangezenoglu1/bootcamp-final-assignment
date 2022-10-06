@@ -5,31 +5,24 @@ export default StyleSheet.create({
   container: function (mode) {
     return {
       position: "relative",
-      height: windowHeight,
-      backgroundColor: mode.white  
+      height: windowHeight,  
     };
-  },
-  headerContainer: function (mode) {
-    return {
-        width: windowWidth,
-        backgroundColor: mode.main,
-        height: 70,
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-    }
   },
   darkModeIcon: {
     fontSize: 30,
     color: "white",
     marginRight: 15,
   },
+  tabIcon: {
+    fontSize: 40,
+    marginRight: 15,
+    color: 'white',
+  },
   contactsContainer: {
     position: "absolute",
-    backgroundColor: "#2AABEE",
-    height: 80,
-    width: 80,
+    backgroundColor: "#009FFF",
+    height: 70,
+    width: 70,
     borderRadius: 50,
     alignItems: "center",
     justifyContent: "center",

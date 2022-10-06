@@ -37,9 +37,4 @@ export default StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
   },
-  tabIcon: {
-    fontSize: 35,
-    marginRight: 30,
-    color: "white",
-  },
 });

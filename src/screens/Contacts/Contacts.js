@@ -1,13 +1,13 @@
-import { Pressable, Text, View } from "react-native";
-import styles from "./Home.styles";
+import { Pressable, View } from "react-native";
+import styles from "./Contacts.styles";
+import { ContactList } from "../../components/ContactList/ContactList";
+import { Header } from "../../components/Header/Header";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useDispatch, useSelector } from "react-redux";
 import { darkTheme, lightTheme } from "../../globals/constants";
 import { setTheme } from "../../features/ThemeSlice/themeSlice";
-import { Header } from "../../components/Header/Header";
 
-export const Home = ({ navigation }) => {
+export const Contacts = ({ navigation }) => {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.theme);
 
@@ -19,27 +19,24 @@ export const Home = ({ navigation }) => {
     }
   };
   return (
-    <View style={styles.container(theme)}>
+    <View style={styles.container}>
       <Header
-        title={"Chats"}
+        title={"Contacts"}
         theme={theme}
-        navigation={navigation}
         leftIcon={
-          <Pressable onPress={() => navigation.navigate("Profile")}>
-            <Ionicons style={styles.tabIcon} name="settings-outline" />
+          <Pressable onPress={() => navigation.goBack()}>
+            <Ionicons style={styles.backIcon} name="arrow-back" />
           </Pressable>
         }
       >
+        <Ionicons style={styles.searchIcon} name="search-outline" />
         <Pressable onPress={handleChangeTheme}>
           <Ionicons style={styles.darkModeIcon} name="cloudy-night-outline" />
         </Pressable>
       </Header>
-      <Pressable
-        style={styles.contactsContainer}
-        onPress={() => navigation.navigate("Contacts")}
-      >
-        <MaterialCommunityIcons name="pencil" style={styles.contactsIcon} />
-      </Pressable>
+      <View>
+        <ContactList navigation={navigation} />
+      </View>
     </View>
   );
 };
