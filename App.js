@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { Stack } from "./src/globals/constants";
 import { Home } from "./src/screens/Home/Home";
 import { Login } from "./src/screens/Login/Login";
+import { Profile } from "./src/screens/Profile/Profile";
 import { Register } from "./src/screens/Register/Register";
 import { store } from "./src/store";
 
@@ -17,6 +18,7 @@ export default function App() {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>
       </Provider>

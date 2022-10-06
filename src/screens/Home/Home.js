@@ -19,7 +19,7 @@ export const Home = ({ navigation }) => {
     };
   return (
     <View style={styles.container}>
-      <Header title={"Chats"} theme={theme}>
+      <Header title={"Chats"} theme={theme} navigation={navigation}>
         <Pressable onPress={handleChangeTheme}>
           <Ionicons style={styles.darkModeIcon} name="cloudy-night-outline" />
         </Pressable>
