@@ -20,29 +20,7 @@ export default StyleSheet.create({
         justifyContent: "space-between",
     }
   },
-  leftContainer: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    paddingLeft: 5,
-  },
-  rightContainer: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  title: {
-    color: "white",
-    fontSize: 25,
-    fontWeight: "bold",
-    marginTop: 5,
-    marginBottom: 5,
-  },
-  tabIcon: {
-    fontSize: 35,
-    marginRight: 30,
-    color: "white",
-  },
-  searchIcon: {
+  darkModeIcon: {
     fontSize: 30,
     color: "white",
     marginRight: 15,

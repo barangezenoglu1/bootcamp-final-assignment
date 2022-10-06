@@ -18,10 +18,10 @@ export const Home = ({ navigation }) => {
       }
     };
   return (
-    <View>
+    <View style={styles.container}>
       <Header title={"Chats"} theme={theme}>
         <Pressable onPress={handleChangeTheme}>
-          <Ionicons style={styles.searchIcon} name="cloudy-night-outline" />
+          <Ionicons style={styles.darkModeIcon} name="cloudy-night-outline" />
         </Pressable>
       </Header>
     </View>

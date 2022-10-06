@@ -42,24 +42,4 @@ export default StyleSheet.create({
     marginRight: 30,
     color: "white",
   },
-  searchIcon: {
-    fontSize: 30,
-    color: "white",
-    marginRight: 15,
-  },
-  contactsContainer: {
-    position: "absolute",
-    backgroundColor: "#2AABEE",
-    height: 80,
-    width: 80,
-    borderRadius: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    bottom: 50,
-    right: 15,
-  },
-  contactsIcon: {
-    fontSize: 30,
-    color: "white",
-  },
 });
