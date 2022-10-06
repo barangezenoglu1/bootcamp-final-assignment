@@ -17,7 +17,6 @@ export default StyleSheet.create({
       fontSize: 20,
       color: "#009FFF",
     },
-    content: {},
     inputContainer: {
       alignItems: "center",
     },
