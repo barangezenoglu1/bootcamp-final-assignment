@@ -1,6 +1,7 @@
 import { Image, Pressable, Text, View } from "react-native";
 import styles from "./Header.styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useSelector } from "react-redux";
 
 export const Header = ({
   children,
@@ -20,7 +21,7 @@ export const Header = ({
           <Image source={{ uri: profilePhoto }} style={styles.profilePhoto} />
           <View>
             <Text style={styles.contactName}>{contactName}</Text>
-            <Text style={styles.lastSeen}>{lastSeen}</Text>
+            <Text style={styles.lastSeen(theme)}>{lastSeen}</Text>
           </View>
         </View>
       );

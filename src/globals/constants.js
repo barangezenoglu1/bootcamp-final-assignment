@@ -8,7 +8,7 @@ export const Stack = createNativeStackNavigator();
 export const lightTheme = {
     white: '#FFFFFF',
     black: '#000000',
-    grey: 'grey',
+    grey: '#6B6A6A',
     main: '#009FFF'
   };
   

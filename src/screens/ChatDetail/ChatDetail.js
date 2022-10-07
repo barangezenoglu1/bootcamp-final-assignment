@@ -10,6 +10,7 @@ import { Header } from "../../components/Header/Header";
 import BackgroundLogo from "../../assets/chat-background.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { windowHeight, windowWidth } from "../../globals/constants";
+import { ChatInput } from "../../components/ChatInput/ChatInput";
 
 export const ChatDetail = ({ route, navigation }) => {
   const { contactName, profilePhoto, lastSeen } = route.params;
@@ -34,7 +35,7 @@ export const ChatDetail = ({ route, navigation }) => {
         resizeMode="cover"
         style={styles.imageBackground}
       ></ImageBackground>
-     
+     <ChatInput />
     </View>
   );
 };

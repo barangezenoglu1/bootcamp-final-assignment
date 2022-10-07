@@ -35,16 +35,18 @@ export default StyleSheet.create({
     borderRadius: 50,
   },
   contactName: {
-    padding: 5,
+    padding: 3,
     color: "#FFFF",
     fontSize: 20,
     fontWeight: "500",
   },
-  lastSeen: {
-    padding: 5,
-    color: "#3B3B3B",
-    fontSize: 15,
-    fontWeight: "300",
+  lastSeen: function (mode) {
+    return {
+      padding: 3,
+      color: mode.grey,
+      fontSize: 15,
+      fontWeight: "300",
+    }
   },
   title: {
     color: "white",
