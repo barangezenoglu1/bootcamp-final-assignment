@@ -2,22 +2,12 @@ import { Pressable, Text, View } from "react-native";
 import styles from "./Home.styles";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { useDispatch, useSelector } from "react-redux";
-import { darkTheme, lightTheme } from "../../globals/constants";
-import { setTheme } from "../../features/ThemeSlice/themeSlice";
+import AntDesign from "react-native-vector-icons/AntDesign";
 import { Header } from "../../components/Header/Header";
+import { useSelector } from "react-redux";
 
 export const Home = ({ navigation }) => {
-  const dispatch = useDispatch();
-  const theme = useSelector((state) => state.theme.theme);
-
-  const handleChangeTheme = () => {
-    if (theme === lightTheme) {
-      dispatch(setTheme(darkTheme));
-    } else {
-      dispatch(setTheme(lightTheme));
-    }
-  };
+  const theme = useSelector((state) => state.theme.theme)
   return (
     <View style={styles.container(theme)}>
       <Header
@@ -26,12 +16,12 @@ export const Home = ({ navigation }) => {
         navigation={navigation}
         leftIcon={
           <Pressable onPress={() => navigation.navigate("Profile")}>
-            <Ionicons style={styles.tabIcon} name="settings-outline" />
+            <Ionicons style={styles.settingsIcon} name="settings-outline" />
           </Pressable>
         }
       >
-        <Pressable onPress={handleChangeTheme}>
-          <Ionicons style={styles.darkModeIcon} name="cloudy-night-outline" />
+        <Pressable onPress={() => navigation.navigate("Contacts")}>
+          <AntDesign style={styles.plusIcon} name="plus" />
         </Pressable>
       </Header>
       <Pressable

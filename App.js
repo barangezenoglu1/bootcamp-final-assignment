@@ -3,6 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Provider } from "react-redux";
 import { Stack } from "./src/globals/constants";
+import { ChatDetail } from "./src/screens/ChatDetail/ChatDetail";
 import { Contacts } from "./src/screens/Contacts/Contacts";
 import { Home } from "./src/screens/Home/Home";
 import { Login } from "./src/screens/Login/Login";
@@ -21,6 +22,7 @@ export default function App() {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Contacts" component={Contacts} />
+          <Stack.Screen name="ChatDetail" component={ChatDetail} />
         </Stack.Navigator>
       </NavigationContainer>
       </Provider>

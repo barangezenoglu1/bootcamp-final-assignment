@@ -18,7 +18,7 @@ export default StyleSheet.create({
       marginRight: 15,
     },
     backIcon: {
-      fontSize: 40,
+      fontSize: 30,
       marginRight: 30,
       color: 'white',
     },

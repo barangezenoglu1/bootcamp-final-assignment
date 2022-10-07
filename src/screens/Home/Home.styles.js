@@ -6,16 +6,16 @@ export default StyleSheet.create({
     return {
       position: "relative",
       height: windowHeight,  
-      backgroundColor: mode.white
+      backgroundColor: mode.white,
     };
   },
-  darkModeIcon: {
+  plusIcon: {
     fontSize: 30,
     color: "white",
     marginRight: 15,
   },
-  tabIcon: {
-    fontSize: 40,
+  settingsIcon: {
+    fontSize: 30,
     marginRight: 15,
     color: 'white',
   },
