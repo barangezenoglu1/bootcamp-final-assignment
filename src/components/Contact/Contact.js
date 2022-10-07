@@ -1,14 +1,14 @@
 import { Image, Pressable, Text, View } from "react-native";
 import styles from "./Contact.style";
-import { useSelector } from "react-redux";
 import logo from "../../assets/msn-logo.png";
+import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 export const Contact = ({
   contactName,
   lastSeen,
   profilePhoto,
   navigation,
 }) => {
-  const theme = useSelector((state) => state.theme.theme);
+  const theme = useGlobalTheme();
   return (
     <Pressable
       style={styles.container(theme)}

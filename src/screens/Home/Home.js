@@ -4,10 +4,10 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { Header } from "../../components/Header/Header";
-import { useSelector } from "react-redux";
+import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 
 export const Home = ({ navigation }) => {
-  const theme = useSelector((state) => state.theme.theme)
+  const theme = useGlobalTheme();
   return (
     <View style={styles.container(theme)}>
       <Header

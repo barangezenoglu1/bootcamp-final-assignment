@@ -3,13 +3,14 @@ import styles from "./Contacts.styles";
 import { ContactList } from "../../components/ContactList/ContactList";
 import { Header } from "../../components/Header/Header";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { darkTheme, lightTheme } from "../../globals/constants";
 import { setTheme } from "../../features/ThemeSlice/themeSlice";
+import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 
 export const Contacts = ({ navigation }) => {
+  const theme = useGlobalTheme();
   const dispatch = useDispatch();
-  const theme = useSelector((state) => state.theme.theme);
 
   const handleChangeTheme = () => {
     if (theme === lightTheme) {

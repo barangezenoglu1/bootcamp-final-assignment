@@ -5,16 +5,16 @@ import {
   Text,
   View,
 } from "react-native";
-import { useSelector } from "react-redux";
 import { Header } from "../../components/Header/Header";
 import BackgroundLogo from "../../assets/chat-background.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { windowHeight, windowWidth } from "../../globals/constants";
 import { ChatInput } from "../../components/ChatInput/ChatInput";
+import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 
 export const ChatDetail = ({ route, navigation }) => {
+  const theme = useGlobalTheme();
   const { contactName, profilePhoto, lastSeen } = route.params;
-  const theme = useSelector((state) => state.theme.theme);
   console.log("aaa", contactName, profilePhoto, lastSeen);
   return (
     <View style={styles.container}>
@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
   container: {
     width: windowWidth,
     height: windowHeight,
-    backgroundColor: "red",
   },
   backIcon: {
     fontSize: 30,

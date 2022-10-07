@@ -1,28 +1,29 @@
 import { useEffect, useState } from "react";
 import { Image, Switch, Text, TextInput, View } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
-import logo from "../../assets/msn-logo.png"
+import logo from "../../assets/msn-logo.png";
 import styles from "./Profile.styles";
 import { setTheme } from "../../features/ThemeSlice/themeSlice";
 import { darkTheme, lightTheme } from "../../globals/constants";
+import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 export const Profile = () => {
-  const theme = useSelector((state) => state.theme.theme);
+  const theme = useGlobalTheme();
   const dispatch = useDispatch();
 
   const [isEnabled, setIsEnabled] = useState(false);
-  
+
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
   useEffect(() => {
-    if(isEnabled) {
-        dispatch(setTheme(darkTheme));
+    if (isEnabled) {
+      dispatch(setTheme(darkTheme));
     } else {
-        dispatch(setTheme(lightTheme))
+      dispatch(setTheme(lightTheme));
     }
-  }, [isEnabled])
-  
+  }, [isEnabled]);
+
   return (
     <View style={styles.container(theme)}>
       <View style={styles.darkModeContainer}>
@@ -39,10 +40,7 @@ export const Profile = () => {
         />
       </View>
       <View style={styles.settingsContainer}>
-        <Image
-          source={logo}
-          style={styles.profilePhoto}
-        />
+        <Image source={logo} style={styles.profilePhoto} />
         <View style={styles.editPpButtonsContainer}>
           <CustomButton
             title={"Select from library"}
@@ -59,19 +57,16 @@ export const Profile = () => {
           style={styles.textInput}
           placeholder="Change your email"
           placeholderTextColor={"grey"}
-         
         />
         <TextInput
           style={styles.textInput}
           placeholder="Change your password"
           placeholderTextColor={"grey"}
-         
         />
-         <TextInput
+        <TextInput
           style={styles.textInput}
           placeholder="Confirm your password"
           placeholderTextColor={"grey"}
-         
         />
         <CustomButton
           title={"Confirm & Edit"}
