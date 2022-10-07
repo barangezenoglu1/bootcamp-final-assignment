@@ -5,10 +5,10 @@ import {
   Text,
   View,
 } from "react-native";
+import styles from "./ChatDetail.styles";
 import { Header } from "../../components/Header/Header";
 import BackgroundLogo from "../../assets/chat-background.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { windowHeight, windowWidth } from "../../globals/constants";
 import { ChatInput } from "../../components/ChatInput/ChatInput";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 
@@ -39,18 +39,3 @@ export const ChatDetail = ({ route, navigation }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: windowWidth,
-    height: windowHeight,
-  },
-  backIcon: {
-    fontSize: 30,
-    marginRight: 10,
-    color: "white",
-  },
-  imageBackground: {
-   flex: 1
-  },
-});
