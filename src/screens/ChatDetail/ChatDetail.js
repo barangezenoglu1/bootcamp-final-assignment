@@ -1,19 +1,45 @@
-import {
-  ImageBackground,
-  Pressable,
-  View,
-} from "react-native";
+import { ImageBackground, Pressable, View } from "react-native";
 import styles from "./ChatDetail.styles";
 import { Header } from "../../components/Header/Header";
 import BackgroundLogo from "../../assets/chat-background.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { ChatInput } from "../../components/ChatInput/ChatInput";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
+import { Chat } from "../../components/Chat/Chat";
+import { useDispatch, useSelector } from "react-redux";
+import { useMemo, useState } from "react";
+import { sendMessage } from "../../features/MessagesSlice/messagesSlice";
 
 export const ChatDetail = ({ route, navigation }) => {
-  const theme = useGlobalTheme();
   const { contactName, profilePhoto, lastSeen } = route.params;
-  console.log("aaa", contactName, profilePhoto, lastSeen);
+  const dispatch = useDispatch();
+  const theme = useGlobalTheme();
+  const messages = useSelector((state) => state.messages);
+  const [inputText, setInputText] = useState("");
+
+  const currentChat = useMemo(() =>
+    messages.filter(
+      (currentChat) => currentChat?.reciever === contactName,
+      [messages]
+    )
+  );
+
+  const changeTextHandler = (text) => {
+    setInputText(text);
+  };
+
+  const handleSubmitInput = (input) => {
+    const msgObj = {
+      id: Math.random(),
+      reciever: contactName,
+      message: input,
+    };
+    dispatch(sendMessage(msgObj));
+    setInputText("");
+  };
+  console.log("inputText", inputText);
+  console.log("messages", messages);
+
   return (
     <View style={styles.container}>
       <Header
@@ -32,8 +58,14 @@ export const ChatDetail = ({ route, navigation }) => {
         source={BackgroundLogo}
         resizeMode="cover"
         style={styles.imageBackground}
-      ></ImageBackground>
-     <ChatInput />
+      >
+        <Chat messages={currentChat} />
+      </ImageBackground>
+      <ChatInput
+        onSubmitted={() => handleSubmitInput(inputText)}
+        changeTextHandler={changeTextHandler}
+        inputValue={inputText}
+      />
     </View>
   );
 };
