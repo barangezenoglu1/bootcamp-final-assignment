@@ -1,8 +1,6 @@
 import {
   ImageBackground,
   Pressable,
-  StyleSheet,
-  Text,
   View,
 } from "react-native";
 import styles from "./ChatDetail.styles";

@@ -55,4 +55,14 @@ export default StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
   },
+  search: function (mode) {
+    return {
+      height: 30,
+      width: 200,
+      borderWidth: 1,
+      borderColor: mode.white,
+      borderRadius: 50,
+      paddingLeft: 10
+    }
+  }
 });

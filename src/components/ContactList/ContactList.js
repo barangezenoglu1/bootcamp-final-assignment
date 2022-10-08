@@ -1,11 +1,10 @@
 import { ScrollView } from "react-native";
 import { Contact } from "../Contact/Contact";
-import { preparedContacts } from "../mock-data/contactListGenerator";
 import styles from "./ContactList.style";
-export const ContactList = ({navigation}) => {
+export const ContactList = ({navigation, contactList}) => {
   return (
     <ScrollView contentContainerStyle={styles.contentContainerStyle}>
-      {preparedContacts.map((contact) => {
+      {contactList.map((contact) => {
         return (
           <Contact
             key={contact.id}

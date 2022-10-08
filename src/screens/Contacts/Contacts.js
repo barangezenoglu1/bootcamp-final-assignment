@@ -7,10 +7,26 @@ import { useDispatch } from "react-redux";
 import { darkTheme, lightTheme } from "../../globals/constants";
 import { setTheme } from "../../features/ThemeSlice/themeSlice";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
+import { useMemo, useState } from "react";
+import { preparedContacts } from "../../mock-data/contactListGenerator";
 
 export const Contacts = ({ navigation }) => {
   const theme = useGlobalTheme();
   const dispatch = useDispatch();
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [searchFilter, setSearchFilter] = useState("");
+  const filteredContactList = useMemo(
+    () =>
+      preparedContacts.filter((contact) =>
+        contact.contactName
+          .toLocaleUpperCase()
+          .includes(searchFilter.toLocaleUpperCase())
+      ),
+    [searchFilter, preparedContacts]
+  );
+  const openSearch = () => {
+    setIsSearchActive(!isSearchActive);
+  };
 
   const handleChangeTheme = () => {
     if (theme === lightTheme) {
@@ -23,20 +39,28 @@ export const Contacts = ({ navigation }) => {
     <View style={styles.container}>
       <Header
         title={"Contacts"}
+        searchActive={isSearchActive}
         theme={theme}
+        value={searchFilter}
+        onChangeText={(text) => setSearchFilter(text)}
         leftIcon={
           <Pressable onPress={() => navigation.goBack()}>
             <Ionicons style={styles.backIcon} name="arrow-back" />
           </Pressable>
         }
       >
-        <Ionicons style={styles.searchIcon} name="search-outline" />
+        <Pressable onPress={openSearch}>
+          <Ionicons style={styles.searchIcon} name="search-outline" />
+        </Pressable>
         <Pressable onPress={handleChangeTheme}>
           <Ionicons style={styles.darkModeIcon} name="cloudy-night-outline" />
         </Pressable>
       </Header>
       <View>
-        <ContactList navigation={navigation} />
+        <ContactList
+          contactList={filteredContactList}
+          navigation={navigation}
+        />
       </View>
     </View>
   );
