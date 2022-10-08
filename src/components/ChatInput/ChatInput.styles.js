@@ -38,9 +38,9 @@ export default StyleSheet.create({
       color: mode.black,
     };
   },
-  micIcon: function (mode) {
+  sendIcon: function (mode) {
     return {
-      fontSize: 25,
+      fontSize: 20,
       marginRight: 15,
       color: mode.black
     };

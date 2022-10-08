@@ -15,11 +15,12 @@ export default StyleSheet.create({
     position: 'relative',
     right: 10
   },
- /*  receiveMessage: {
+  /* receiveMessage: {
     backgroundColor: '#fff',
     paddingTop: 10,
     paddingBottom: 15,
     paddingLeft: 10,
+    paddingRight: 20,
     marginVertical: 5,
     maxWidth: '85%',
     borderRadius: 10,
