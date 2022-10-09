@@ -19,16 +19,18 @@ export default StyleSheet.create({
     marginRight: 15,
     color: 'white',
   },
-  contactsContainer: {
-    position: "absolute",
-    backgroundColor: "#009FFF",
-    height: 70,
-    width: 70,
-    borderRadius: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    bottom: 50,
-    right: 15,
+  contactsContainer: function (mode) {
+    return {
+      position: "absolute",
+      backgroundColor: mode.main,
+      height: 70,
+      width: 70,
+      borderRadius: 50,
+      alignItems: "center",
+      justifyContent: "center",
+      bottom: 50,
+      right: 15,
+    }
   },
   contactsIcon: {
     fontSize: 30,

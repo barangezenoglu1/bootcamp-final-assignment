@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const allUsersSlice = createSlice({
     name: "allUsers",
-    initialState: null,
+    initialState: [],
     reducers: {
         setAllUsers: (state, action) => {
             return {

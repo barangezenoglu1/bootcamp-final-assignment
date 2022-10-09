@@ -22,7 +22,7 @@ export const Home = ({ navigation }) => {
 
   const contactedPeople = useMemo(
     () =>
-      allContacts.filter((contact) => {
+     allContacts && allContacts.filter((contact) => {
         return messages.some((message) => {
           return message.reciever === contact.name;
         });
@@ -66,9 +66,9 @@ export const Home = ({ navigation }) => {
           <AntDesign style={styles.plusIcon} name="plus" />
         </Pressable>
       </Header>
-      <ContactedList navigation={navigation} contactedList={contactedPeople} />
+      <ContactedList navigation={navigation} contactedList={contactedPeople ? contactedPeople : []} />
       <Pressable
-        style={styles.contactsContainer}
+        style={styles.contactsContainer(theme)}
         onPress={() => navigation.navigate("Contacts")}
       >
         <MaterialCommunityIcons name="pencil" style={styles.contactsIcon} />
