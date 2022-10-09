@@ -8,7 +8,7 @@ export const ContactList = ({navigation, contactList}) => {
         return (
           <Contact
             key={contact.id}
-            contactName={contact.contactName}
+            contactName={contact.name}
             profilePhoto={contact.profilePhoto}
             lastSeen={contact.lastSeen}
             navigation={navigation}
