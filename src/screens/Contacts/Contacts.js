@@ -7,8 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { darkTheme, lightTheme } from "../../globals/constants";
 import { setTheme } from "../../features/ThemeSlice/themeSlice";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
-import { useEffect, useMemo, useState } from "react";
-import { useGetAsyncStorageValue } from "../../hooks/getAsyncStorageValue";
+import { useMemo, useState } from "react";
 
 export const Contacts = ({ navigation }) => {
   const allUsers = useSelector((state) => state.allUsers.allUsers);
@@ -17,15 +16,19 @@ export const Contacts = ({ navigation }) => {
   const dispatch = useDispatch();
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [searchFilter, setSearchFilter] = useState("");
+
   const filteredContactList = useMemo(
     () =>
-    allUsers.filter((contact) =>
-     JSON.parse(activeUser).loginEmail !== contact.email &&  contact.name
-          .toLocaleUpperCase()
-          .includes(searchFilter.toLocaleUpperCase())
+      allUsers.filter(
+        (contact) =>
+          JSON.parse(activeUser).loginEmail !== contact.email &&
+          contact.name
+            .toLocaleUpperCase()
+            .includes(searchFilter.toLocaleUpperCase())
       ),
     [searchFilter, allUsers]
   );
+
   const openSearch = () => {
     setIsSearchActive(!isSearchActive);
   };

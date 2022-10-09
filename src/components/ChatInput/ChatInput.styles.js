@@ -42,7 +42,7 @@ export default StyleSheet.create({
     return {
       fontSize: 20,
       marginRight: 15,
-      color: mode.black
+      color: mode.black,
     };
   },
 });

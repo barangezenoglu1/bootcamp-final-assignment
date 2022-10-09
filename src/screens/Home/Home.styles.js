@@ -5,7 +5,7 @@ export default StyleSheet.create({
   container: function (mode) {
     return {
       position: "relative",
-      height: windowHeight,  
+      height: windowHeight,
       backgroundColor: mode.white,
     };
   },
@@ -17,7 +17,7 @@ export default StyleSheet.create({
   settingsIcon: {
     fontSize: 30,
     marginRight: 15,
-    color: 'white',
+    color: "white",
   },
   contactsContainer: function (mode) {
     return {
@@ -30,7 +30,7 @@ export default StyleSheet.create({
       justifyContent: "center",
       bottom: 50,
       right: 15,
-    }
+    };
   },
   contactsIcon: {
     fontSize: 30,

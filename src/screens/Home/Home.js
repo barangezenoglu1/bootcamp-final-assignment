@@ -4,7 +4,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { Header } from "../../components/Header/Header";
-import firestore, { firebase } from "@react-native-firebase/firestore";
+import { firebase } from "@react-native-firebase/firestore";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,13 +22,15 @@ export const Home = ({ navigation }) => {
 
   const contactedPeople = useMemo(
     () =>
-     allContacts && allContacts.filter((contact) => {
+      allContacts &&
+      allContacts.filter((contact) => {
         return messages.some((message) => {
           return message.reciever === contact.name;
         });
       }),
     [allContacts, messages]
   );
+  
   useEffect(() => {
     firebase
       .firestore()
@@ -66,7 +68,10 @@ export const Home = ({ navigation }) => {
           <AntDesign style={styles.plusIcon} name="plus" />
         </Pressable>
       </Header>
-      <ContactedList navigation={navigation} contactedList={contactedPeople ? contactedPeople : []} />
+      <ContactedList
+        navigation={navigation}
+        contactedList={contactedPeople ? contactedPeople : []}
+      />
       <Pressable
         style={styles.contactsContainer(theme)}
         onPress={() => navigation.navigate("Contacts")}

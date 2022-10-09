@@ -4,6 +4,7 @@ import { TextBox } from "../TextBox/TextBox";
 
 export const Chat = ({messages}) => {
   const scrollViewRef = useRef();
+  
   return (
     <ScrollView
       ref={scrollViewRef}

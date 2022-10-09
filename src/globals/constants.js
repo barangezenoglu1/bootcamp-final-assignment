@@ -10,7 +10,7 @@ export const lightTheme = {
   black: "#000000",
   grey: "#6B6A6A",
   main: "#009FFF",
-  darkMain: "#FFFFFF"
+  darkMain: "#FFFFFF",
 };
 
 export const darkTheme = {
@@ -18,7 +18,7 @@ export const darkTheme = {
   black: "#FFFFFF",
   grey: "#EBE7E7",
   main: "#6B6A6A",
-  darkMain: "#6B6A6A"
+  darkMain: "#6B6A6A",
 };
 
 // Dimensions

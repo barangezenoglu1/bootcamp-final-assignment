@@ -9,7 +9,7 @@ export default StyleSheet.create({
       flexDirection: "row",
       alignItems: "center",
       padding: 20,
-      height: 80 ,
+      height: 80,
       borderBottomWidth: 1,
       borderBottomColor: "#BFBFBF",
       backgroundColor: mode.white,

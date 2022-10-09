@@ -1,17 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import { Contact } from "../Contact/Contact";
 
-export const ContactedList = ({navigation, contactedList}) => {
+export const ContactedList = ({ navigation, contactedList }) => {
+  
   return (
-    <ScrollView contentContainerStyle={styles.contentContainerStyle} >
+    <ScrollView contentContainerStyle={styles.contentContainerStyle}>
       {contactedList.map((contact) => {
-       return <Contact
-          key={contact.id}
-          contactName={contact.name}
-          photoURL={contact.photoURL}
-          navigation={navigation}
-        />;
+        return (
+          <Contact
+            key={contact.id}
+            contactName={contact.name}
+            photoURL={contact.photoURL}
+            navigation={navigation}
+          />
+        );
       })}
     </ScrollView>
   );
@@ -19,6 +22,6 @@ export const ContactedList = ({navigation, contactedList}) => {
 
 const styles = StyleSheet.create({
   contentContainerStyle: {
-    paddingBottom: 80
-  }
-})
+    paddingBottom: 80,
+  },
+});

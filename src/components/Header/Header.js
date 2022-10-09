@@ -1,14 +1,11 @@
-import { Image, Pressable, Text, TextInput, View } from "react-native";
+import { Image,Text, TextInput, View } from "react-native";
 import styles from "./Header.styles";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { useSelector } from "react-redux";
 
 export const Header = ({
   children,
   leftIcon,
   title,
   theme,
-  navigation,
   profile,
   photoUrl,
   lastSeen,
@@ -18,6 +15,7 @@ export const Header = ({
   value,
 }) => {
   const displayHeaderContent = () => {
+
     if (searchActive) {
       return (
         <TextInput
@@ -28,6 +26,7 @@ export const Header = ({
         />
       );
     } else {
+
       if (profile) {
         return (
           <View style={styles.profileWrapper}>
@@ -43,6 +42,7 @@ export const Header = ({
       }
     }
   };
+  
   return (
     <View style={styles.headerContainer(theme)}>
       <View style={styles.leftContainer}>

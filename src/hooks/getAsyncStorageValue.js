@@ -1,7 +1,7 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useEffect, useState} from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useEffect, useState } from "react";
 
-export const useGetAsyncStorageValue = key => {
+export const useGetAsyncStorageValue = (key) => {
   const [asyncStorageValue, setAsyncStorageValue] = useState();
   // We use this hook for getting current async storage value
   const getRegisteredUser = async () => {

@@ -1,14 +1,10 @@
 import { Image, Pressable, Text, View } from "react-native";
 import styles from "./Contact.style";
-import logo from "../../assets/msn-logo.png";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
-export const Contact = ({
-  contactName,
-  lastSeen,
-  photoURL,
-  navigation,
-}) => {
+
+export const Contact = ({ contactName, lastSeen, photoURL, navigation }) => {
   const theme = useGlobalTheme();
+
   return (
     <Pressable
       style={styles.container(theme)}
@@ -20,7 +16,7 @@ export const Contact = ({
         })
       }
     >
-      <Image style={styles.profilePhoto} source={{uri: photoURL}} />
+      <Image style={styles.profilePhoto} source={{ uri: photoURL }} />
       <View style={styles.textContainer}>
         <Text style={styles.contactName(theme)}>{contactName}</Text>
         <Text style={styles.lastSeen(theme)}>{lastSeen}</Text>
