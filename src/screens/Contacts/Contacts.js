@@ -3,26 +3,26 @@ import styles from "./Contacts.styles";
 import { ContactList } from "../../components/ContactList/ContactList";
 import { Header } from "../../components/Header/Header";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { darkTheme, lightTheme } from "../../globals/constants";
 import { setTheme } from "../../features/ThemeSlice/themeSlice";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 import { useMemo, useState } from "react";
-import { preparedContacts } from "../../mock-data/contactListGenerator";
 
 export const Contacts = ({ navigation }) => {
+  const allUsers = useSelector((state) => state.allUsers.allUsers);
   const theme = useGlobalTheme();
   const dispatch = useDispatch();
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [searchFilter, setSearchFilter] = useState("");
   const filteredContactList = useMemo(
     () =>
-      preparedContacts.filter((contact) =>
-        contact.contactName
+    allUsers.filter((contact) =>
+        contact.name
           .toLocaleUpperCase()
           .includes(searchFilter.toLocaleUpperCase())
       ),
-    [searchFilter, preparedContacts]
+    [searchFilter, allUsers]
   );
   const openSearch = () => {
     setIsSearchActive(!isSearchActive);

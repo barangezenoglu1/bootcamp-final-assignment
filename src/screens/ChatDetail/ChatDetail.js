@@ -37,8 +37,6 @@ export const ChatDetail = ({ route, navigation }) => {
     dispatch(sendMessage(msgObj));
     setInputText("");
   };
-  console.log("inputText", inputText);
-  console.log("messages", messages);
 
   return (
     <View style={styles.container}>
