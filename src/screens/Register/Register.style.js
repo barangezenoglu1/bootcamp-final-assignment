@@ -27,34 +27,25 @@ export default StyleSheet.create({
       marginTop: 20,
       padding: 10,
     },
-    loginButtonContainer: {
-      height: 50,
-      width: 200,
-  
-      backgroundColor: "#009FFF",
-      alignItems: "center",
-      justifyContent: "center",
-      top: 20,
+    registerButtonContainer: function (disable) {
+      return {
+        height: 50,
+        width: 200,
+        backgroundColor: disable ? 'grey' : "#009FFF",
+        alignItems: "center",
+        justifyContent: "center",
+        top: 20,
+        marginBottom: 20
+      }
     },
     buttonText: {
       fontSize: 20,
       fontWeight: "bold",
       color: "white",
     },
-    registerTextContainer: {
-      marginTop: 30,
-    },
-    memberText: {
-      color: "#767676",
-      fontStyle: "italic",
-    },
-    createText: {
-      color: "#009FFF",
-      fontWeight: "bold",
-      fontStyle: "italic",
-      textDecorationLine: "underline",
-    },
+   
     logo: {
+      top: 80,
       width: 120,
       height: 120,
     },

@@ -3,6 +3,7 @@ import styles from "./Login.style";
 import MsnLogo from "../../assets/msn-logo.png";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
 export const Login = ({ navigation }) => {
+  
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
