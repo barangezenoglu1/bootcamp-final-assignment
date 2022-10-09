@@ -11,7 +11,7 @@ import { useMemo, useState } from "react";
 import { sendMessage } from "../../features/MessagesSlice/messagesSlice";
 
 export const ChatDetail = ({ route, navigation }) => {
-  const { contactName, profilePhoto, lastSeen } = route.params;
+  const { contactName, photoURL, lastSeen } = route.params;
   const dispatch = useDispatch();
   const theme = useGlobalTheme();
   const messages = useSelector((state) => state.messages);
@@ -43,7 +43,7 @@ export const ChatDetail = ({ route, navigation }) => {
       <Header
         profile
         contactName={contactName}
-        profilePhoto={profilePhoto}
+        photoUrl={photoURL}
         lastSeen={lastSeen}
         theme={theme}
         leftIcon={

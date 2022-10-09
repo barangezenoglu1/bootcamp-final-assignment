@@ -16,7 +16,7 @@ export const Contact = ({
         navigation.navigate("ChatDetail", {
           contactName,
           lastSeen,
-          profilePhoto,
+          photoURL,
         })
       }
     >

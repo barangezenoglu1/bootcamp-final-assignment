@@ -105,8 +105,8 @@ export const Profile = ({navigation}) => {
 
   useEffect(() => {
     setEditedUser(JSON.parse(activeUser))
-  },[])
-
+  },[ ])
+  
   return (
     <View style={styles.container(theme)}>
       <View style={styles.darkModeContainer}>

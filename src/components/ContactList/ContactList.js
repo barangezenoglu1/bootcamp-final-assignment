@@ -5,7 +5,6 @@ export const ContactList = ({navigation, contactList}) => {
   return (
     <ScrollView contentContainerStyle={styles.contentContainerStyle}>
       {contactList.map((contact) => {
-        console.log('contact', contact)
         return (
           <Contact
             key={contact.id}

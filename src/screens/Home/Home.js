@@ -6,17 +6,29 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import { Header } from "../../components/Header/Header";
 import firestore, { firebase } from "@react-native-firebase/firestore";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetAsyncStorageValue } from "../../hooks/getAsyncStorageValue";
 import { setUser } from "../../features/UserSlice/UserSlice";
 import { setAllUsers } from "../../features/AllUsers/allUsersSlice";
+import { ContactedList } from "../../components/ContactedList/ContactedList";
 
 export const Home = ({ navigation }) => {
   const dispatch = useDispatch();
   const theme = useGlobalTheme();
   const loggedUser = useGetAsyncStorageValue("registeredUser");
- 
+  const allContacts = useSelector((state) => state.allUsers.allUsers);
+  const messages = useSelector((state) => state.messages);
+
+  const contactedPeople = useMemo(
+    () =>
+      allContacts.filter((contact) => {
+        return messages.some((message) => {
+          return message.reciever === contact.name;
+        });
+      }),
+    [allContacts, messages]
+  );
   useEffect(() => {
     firebase
       .firestore()
@@ -27,7 +39,7 @@ export const Home = ({ navigation }) => {
           ...doc.data(),
           id: doc.id,
         }));
-        dispatch(setAllUsers(fetchedUsers))
+        dispatch(setAllUsers(fetchedUsers));
       })
       .catch((err) => {
         console.log(err);
@@ -35,8 +47,8 @@ export const Home = ({ navigation }) => {
   }, []);
 
   useEffect(() => {
-    dispatch(setUser(loggedUser))
-  }, [loggedUser])
+    dispatch(setUser(loggedUser));
+  }, [loggedUser]);
 
   return (
     <View style={styles.container(theme)}>
@@ -54,6 +66,7 @@ export const Home = ({ navigation }) => {
           <AntDesign style={styles.plusIcon} name="plus" />
         </Pressable>
       </Header>
+      <ContactedList navigation={navigation} contactedList={contactedPeople} />
       <Pressable
         style={styles.contactsContainer}
         onPress={() => navigation.navigate("Contacts")}
