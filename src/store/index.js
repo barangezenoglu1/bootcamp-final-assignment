@@ -1,4 +1,4 @@
-import { configureStore, isImmutableDefault } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from "../features/ThemeSlice/themeSlice";
 import messagesReducer from "../features/MessagesSlice//messagesSlice";
 import userReducer from "../features/UserSlice/UserSlice";
@@ -9,6 +9,6 @@ export const store = configureStore({
     theme: themeReducer,
     messages: messagesReducer,
     user: userReducer,
-    allUsers: allUsersReducer
+    allUsers: allUsersReducer,
   },
 });

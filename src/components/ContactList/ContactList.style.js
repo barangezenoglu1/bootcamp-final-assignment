@@ -1,8 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    contentContainerStyle: {
-      paddingBottom: 69,
-      
-    },
-  });
+  contentContainerStyle: {
+    paddingBottom: 69,
+  },
+});

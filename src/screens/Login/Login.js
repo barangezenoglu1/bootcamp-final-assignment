@@ -6,10 +6,8 @@ import { useEffect, useState } from "react";
 import auth from "@react-native-firebase/auth";
 import { useGetAsyncStorageValue } from "../../hooks/getAsyncStorageValue";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useDispatch } from "react-redux";
 export const Login = ({ navigation }) => {
   const loggedUser = useGetAsyncStorageValue("registeredUser");
-
   const [loginInfo, setLoginInfo] = useState({
     loginEmail: "",
     loginPassword: "",

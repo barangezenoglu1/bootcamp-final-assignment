@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { Image, Switch, Text, TextInput, View } from "react-native";
+import { useEffect, useState } from "react";
+import { Image, Switch, TextInput, View } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useDispatch, useSelector } from "react-redux";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
@@ -13,16 +13,15 @@ import { firebase } from "@react-native-firebase/auth";
 import { setUser } from "../../features/UserSlice/UserSlice";
 import { launchCamera, launchImageLibrary } from "react-native-image-picker";
 
-export const Profile = ({navigation}) => {
+export const Profile = ({ navigation }) => {
   const theme = useGlobalTheme();
   const dispatch = useDispatch();
   const activeUser = useSelector((state) => state.user.user);
   const [editedUser, setEditedUser] = useState();
-  const [confirmedPassword, setConfirmedPassword] = useState("");
   const [downloadURL, setDownloadURL] = useState();
   const [uploadTask, setUploadTask] = useState();
   const [uploadTaskSnapshot, setUploadTaskSnapshot] = useState({});
- 
+
   const [isEnabled, setIsEnabled] = useState(false);
 
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
@@ -104,9 +103,9 @@ export const Profile = ({navigation}) => {
   }, [downloadURL]);
 
   useEffect(() => {
-    setEditedUser(JSON.parse(activeUser))
-  },[ ])
-  
+    setEditedUser(JSON.parse(activeUser));
+  }, []);
+
   return (
     <View style={styles.container(theme)}>
       <View style={styles.darkModeContainer}>

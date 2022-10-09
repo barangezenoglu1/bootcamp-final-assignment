@@ -9,7 +9,7 @@ export default StyleSheet.create({
   },
   textInputContainer: function (mode) {
     return {
-      backgroundColor: mode.white,
+      backgroundColor: mode.darkMain,
       width: windowWidth,
       flexDirection: "row",
       alignItems: "center",
@@ -42,7 +42,7 @@ export default StyleSheet.create({
     return {
       fontSize: 20,
       marginRight: 15,
-      color: mode.black
+      color: mode.black,
     };
   },
 });

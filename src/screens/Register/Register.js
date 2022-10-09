@@ -1,8 +1,8 @@
-import { Image, Pressable, Text, TextInput, View } from "react-native";
+import { Image, Text, TextInput, View } from "react-native";
 import styles from "./Register.style";
 import MsnLogo from "../../assets/msn-logo.png";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useMemo, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import firestore from "@react-native-firebase/firestore";

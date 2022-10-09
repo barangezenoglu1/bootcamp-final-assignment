@@ -1,11 +1,12 @@
 import { Pressable, TextInput, View } from "react-native";
 import styles from "./ChatInput.styles";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import Entypo from "react-native-vector-icons/Entypo";
 import Feather from "react-native-vector-icons/Feather";
 import { useSelector } from "react-redux";
+
 export const ChatInput = ({ onSubmitted, changeTextHandler, inputValue }) => {
   const theme = useSelector((state) => state.theme.theme);
+
   return (
     <View style={styles.inputAndImage}>
       <View style={styles.textInputContainer(theme)}>

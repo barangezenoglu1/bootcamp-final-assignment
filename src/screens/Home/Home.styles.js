@@ -5,7 +5,7 @@ export default StyleSheet.create({
   container: function (mode) {
     return {
       position: "relative",
-      height: windowHeight,  
+      height: windowHeight,
       backgroundColor: mode.white,
     };
   },
@@ -17,18 +17,20 @@ export default StyleSheet.create({
   settingsIcon: {
     fontSize: 30,
     marginRight: 15,
-    color: 'white',
+    color: "white",
   },
-  contactsContainer: {
-    position: "absolute",
-    backgroundColor: "#009FFF",
-    height: 70,
-    width: 70,
-    borderRadius: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    bottom: 50,
-    right: 15,
+  contactsContainer: function (mode) {
+    return {
+      position: "absolute",
+      backgroundColor: mode.main,
+      height: 70,
+      width: 70,
+      borderRadius: 50,
+      alignItems: "center",
+      justifyContent: "center",
+      bottom: 50,
+      right: 15,
+    };
   },
   contactsIcon: {
     fontSize: 30,
