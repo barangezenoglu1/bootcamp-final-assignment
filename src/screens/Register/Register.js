@@ -11,7 +11,6 @@ import { setUser } from "../../features/UserSlice/UserSlice";
 
 export const Register = ({ navigation }) => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
   const [registerInfo, setRegisterInfo] = useState({
     userMail: null,
     userPassword: null,
