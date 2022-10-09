@@ -5,7 +5,7 @@ import { useGlobalTheme } from "../../hooks/useGlobalTheme";
 export const Contact = ({
   contactName,
   lastSeen,
-  profilePhoto,
+  photoURL,
   navigation,
 }) => {
   const theme = useGlobalTheme();
@@ -20,7 +20,7 @@ export const Contact = ({
         })
       }
     >
-      <Image style={styles.profilePhoto} source={logo} />
+      <Image style={styles.profilePhoto} source={{uri: photoURL}} />
       <View style={styles.textContainer}>
         <Text style={styles.contactName(theme)}>{contactName}</Text>
         <Text style={styles.lastSeen(theme)}>{lastSeen}</Text>

@@ -5,11 +5,12 @@ export const ContactList = ({navigation, contactList}) => {
   return (
     <ScrollView contentContainerStyle={styles.contentContainerStyle}>
       {contactList.map((contact) => {
+        console.log('contact', contact)
         return (
           <Contact
             key={contact.id}
             contactName={contact.name}
-            profilePhoto={contact.profilePhoto}
+            photoURL={contact.photoURL}
             lastSeen={contact.lastSeen}
             navigation={navigation}
           />
