@@ -2,9 +2,14 @@ import { StyleSheet } from "react-native";
 import { windowHeight } from "../../globals/constants";
 
 export default StyleSheet.create({
-    container: {
-      position: 'relative',
-      height: '100%',
+    container: function (mode) {
+      return {
+        position: 'relative',
+        height: '100%',
+        backgroundColor: mode.white,
+        flex: 1
+      }
+    
     },
     darkModeIcon: {
       fontSize: 30,

@@ -10,7 +10,7 @@ export const Header = ({
   theme,
   navigation,
   profile,
-  profilePhoto,
+  photoUrl,
   lastSeen,
   contactName,
   searchActive,
@@ -31,7 +31,7 @@ export const Header = ({
       if (profile) {
         return (
           <View style={styles.profileWrapper}>
-            <Image source={{ uri: profilePhoto }} style={styles.profilePhoto} />
+            <Image source={{ uri: photoUrl }} style={styles.profilePhoto} />
             <View>
               <Text style={styles.contactName}>{contactName}</Text>
               <Text style={styles.lastSeen(theme)}>{lastSeen}</Text>

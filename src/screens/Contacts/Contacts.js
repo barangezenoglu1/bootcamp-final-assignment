@@ -7,10 +7,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { darkTheme, lightTheme } from "../../globals/constants";
 import { setTheme } from "../../features/ThemeSlice/themeSlice";
 import { useGlobalTheme } from "../../hooks/useGlobalTheme";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useGetAsyncStorageValue } from "../../hooks/getAsyncStorageValue";
 
 export const Contacts = ({ navigation }) => {
   const allUsers = useSelector((state) => state.allUsers.allUsers);
+  const activeUser = useSelector((state) => state.user.user);
   const theme = useGlobalTheme();
   const dispatch = useDispatch();
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -18,7 +20,7 @@ export const Contacts = ({ navigation }) => {
   const filteredContactList = useMemo(
     () =>
     allUsers.filter((contact) =>
-        contact.name
+     JSON.parse(activeUser).loginEmail !== contact.email &&  contact.name
           .toLocaleUpperCase()
           .includes(searchFilter.toLocaleUpperCase())
       ),
@@ -35,8 +37,9 @@ export const Contacts = ({ navigation }) => {
       dispatch(setTheme(lightTheme));
     }
   };
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container(theme)}>
       <Header
         title={"Contacts"}
         searchActive={isSearchActive}
