@@ -16,7 +16,7 @@ export const Home = ({ navigation }) => {
   const dispatch = useDispatch();
   const theme = useGlobalTheme();
   const loggedUser = useGetAsyncStorageValue("registeredUser");
-
+ 
   useEffect(() => {
     firebase
       .firestore()
